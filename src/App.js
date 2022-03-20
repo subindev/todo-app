@@ -11,10 +11,16 @@ function App() {
     setList([...list, value]);
   }
 
+  const onRemoveTodoClick = (todo)=>{
+    const index = list.indexOf(todo);
+    list.splice(index, 1);
+    setList([...list])
+  }
+
   return (
     <div>
       <TodoForm valueChange={onValueChange}/>
-      <TodoList items={list}/>
+      <TodoList items={list} removeTodo={onRemoveTodoClick}/>
     </div>
   );
 }

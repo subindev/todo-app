@@ -1,10 +1,12 @@
 import React from "react";
 
-export default function TodoList({ items }) {
+export default function TodoList({ items, removeTodo }) {
   return (
     <ul>
       {items.map((item) => (
-        <li>{item}</li>
+        <li>
+          {item} <button onClick={() => removeTodo(item)}>Delete</button>
+        </li>
       ))}
     </ul>
   );
